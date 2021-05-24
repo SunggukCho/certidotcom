@@ -2,13 +2,13 @@ import React, { Component, useState, useEffect } from "react";
 import FullCalendar  from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from "@fullcalendar/interaction";
-import CustomModal from '../Components/CustomModal';
-import SidebarTab from '../Components/SidebarTab';
+import CustomModal from './CustomModal';
+import SidebarTab from './SidebarTab';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import axios from "axios";
-import Loader from '../Components/Loader';
-import SearchBox from '../Components/SearchBox';
-import { favoriteApi } from "../utils/axios";
+import Loader from '../../Components/Loader';
+import SearchBox from './SearchBox';
+import { favoriteApi } from "../../utils/axios";
 import { Link } from "react-router-dom";
 import dotenv from 'dotenv';
 
@@ -145,7 +145,7 @@ export default function CalendarApp () {
               <SearchBox
                 handleChange={searchUser}
               />
-              <Button variant="outline-success" onClick={filterUser} className="d-flex" 
+              <Button variant="outline-secondary" onClick={filterUser} className="d-flex" 
               style={{ marginBottom: "10px"}}>검색</Button>
           </div>
           <FullCalendar
@@ -181,12 +181,16 @@ function renderEventContent(eventInfo) {
     <>
       {eventInfo.event.id.includes('시작') ?
         <>
-          <div class=".fc-daygrid-event-dot" style={{borderRadius: "4px", border : "4px solid blue"}}></div>
+          <div class=".fc-daygrid-event-dot" 
+            style={{borderRadius: "4px", border : "3px solid #ff6813", backgroundColor: "#ff6813", color: "white", marginRight: "3px"}}
+            >시</div>
           <div class=".fc-event-title">{eventInfo.event.title}</div>
         </>
         :
         <>
-          <div class=".fc-daygrid-event-dot" style={{borderRadius: "4px", border : "4px solid #ff5f2e"}}></div>
+          <div class=".fc-daygrid-event-dot" 
+          style={{borderRadius: "4px", border : "3px solid #3f4b5e", backgroundColor: "#3f4b5e", color: "white", marginRight: "3px"}}
+          >끝</div>
           <div class=".fc-event-title">{eventInfo.event.title}</div>
         </> 
       }

@@ -6,9 +6,9 @@ import PieChart from './PieChart';
 import ColumnChart from './ColumnChart';
 import axios from 'axios';
 import BtnStar from './BtnStar';
-import { favoriteApi, statisticsApi } from "../utils/axios";
-import Loader from './Loader';
-import { SmallLogo } from '../assets/index';
+import { favoriteApi, statisticsApi } from "../../utils/axios";
+import Loader from '../../Components/Loader';
+import { SmallLogo } from '../../assets/index';
 import styled from 'styled-components';
 
 export default function CustomModal(props) {

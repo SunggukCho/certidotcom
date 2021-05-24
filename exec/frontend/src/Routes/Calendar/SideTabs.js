@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Tabs, Tab, ListGroup } from "react-bootstrap";
-import ChatRooms from "./aside/ChatMessageBox/ChatRooms";
+// import ChatRooms from "../Components/aside/ChatMessageBox/ChatRooms";
+import ChatRooms from "../../Components/aside/ChatMessageBox/ChatRooms";
 import CustomModal from './CustomModal';
 import styled from 'styled-components';
 
